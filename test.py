@@ -1,23 +1,10 @@
-import sqlite3
+import os, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# connect db file under current direction
-connection = sqlite3.connect('data.sqlite3')
+import unittest
 
-cursor = connection.cursor()
+from tests.app.test import AppTest
 
-create_table = "CREATE TABLE users(id int, username text, password text)"
 
-cursor.execute(create_table)
-
-user = (1, 'ben', 'pwd')
-insert_query = "INSERT into users Values (?,?,?)"
-cursor.execute(insert_query, user)
-
-users = [
-    (1, 'ben', 'pwd'),
-    (1, 'ben', 'pwd')
-]
-cursor.executemany(insert_query, users)
-
-connection.commit()
-connection.close()
+if __name__ == '__main__':
+    unittest.main()

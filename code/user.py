@@ -11,7 +11,7 @@ class User(Resource):
 
     @classmethod
     def find_by_username(cls, username):
-        connection = sqlite3.connect('data.db')
+        connection = sqlite3.connect('data.sqlite3')
         cursor = connection.cursor()
 
         query = "SELECT * FROM {table} WHERE username=?".format(table=cls.TABLE_NAME)
@@ -19,6 +19,7 @@ class User(Resource):
         row = result.fetchone()
         if row:
             user = cls(*row)
+            # user = User(row[0], row[1], row[2])
         else:
             user = None
 
@@ -27,7 +28,7 @@ class User(Resource):
 
     @classmethod
     def find_by_id(cls, _id):
-        connection = sqlite3.connect('data.db')
+        connection = sqlite3.connect('data.sqlite3')
         cursor = connection.cursor()
 
         query = "SELECT * FROM {table} WHERE id=?".format(table=cls.TABLE_NAME)
