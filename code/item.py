@@ -21,7 +21,7 @@ class Item(Resource):
 
     @classmethod
     def find_by_name(cls, name):
-        connection = sqlite3.connect('data.db')
+        connection = sqlite3.connect('data.sqlite3')
         cursor = connection.cursor()
 
         query = "SELECT * FROM {table} WHERE name=?".format(table=cls.TABLE_NAME)

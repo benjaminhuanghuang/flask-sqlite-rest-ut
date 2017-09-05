@@ -1,5 +1,5 @@
-# Flask + SQlite REST api project
-
+# Flask + Flask-RESTful + SQlite REST api project
+    
 ## Reference
   REST APIs with Flask and Python (2017)
   - https://www.udemy.com/rest-api-flask-and-python/

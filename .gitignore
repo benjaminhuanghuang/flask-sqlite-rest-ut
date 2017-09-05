@@ -3,3 +3,4 @@
 venv3
 data.db
 data.sqlite3
+__pycache__

@@ -1,7 +1,7 @@
 import sqlite3
 from flask_restful import Resource, reqparse
 
-class User(Resource):
+class User():
     TABLE_NAME = 'users'
 
     def __init__(self, _id, username, password):
@@ -42,7 +42,7 @@ class User(Resource):
         connection.close()
         return user
 
-
+# POST /userregiser
 class UserRegister(Resource):
     TABLE_NAME = 'users'
 
