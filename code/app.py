@@ -12,6 +12,8 @@ from item_list import ItemList
 
 def create_app(**config_overrides):
     app = Flask(__name__)
+    app.secret_key = 'SeRet' # Jwt use it
+
     # read config file
     app.config.from_pyfile('config.py')
     app.config.update(config_overrides)
